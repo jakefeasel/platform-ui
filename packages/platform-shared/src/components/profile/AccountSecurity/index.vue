@@ -177,7 +177,7 @@ export default {
         const realm = this.forceRoot ? '/' : (new URLSearchParams(window.location.search)).get('realm') || '/';
         const passwordJourney = res.data.mapping.updatePassword;
         if (passwordJourney) {
-          this.$set(this.passwordItem, 'linkUrl', `${store.state.SharedStore.amBaseURL}/UI/Login?realm=${realm}&ForceAuth=true&authIndexType=service&authIndexValue=${passwordJourney}&goto=${encodeURIComponent(window.location.href)}`);
+          this.$set(this.passwordItem, 'linkUrl', `${store.state.SharedStore.amBaseURL}/UI/Login?noSession=true&realm=${realm}&ForceAuth=true&authIndexType=service&authIndexValue=${passwordJourney}&goto=${encodeURIComponent(window.location.href)}`);
         }
         const usernameJourney = res.data.mapping.updateUsername;
         if (usernameJourney) {
